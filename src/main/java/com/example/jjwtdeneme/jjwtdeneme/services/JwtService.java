@@ -53,12 +53,6 @@ public class JwtService {
         .expiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
         .signWith(getSigningKey())
         .compact();
-        // .setClaims(extraClaims)
-        // .setSubject(userDetails.getUsername())
-        // .setIssuedAt(new Date(System.currentTimeMillis()))
-        // .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
-        // .signWith(getSigningKey(), SignatureAlgorithm.HS256)
-        // .compact();
   }
 
   private boolean isTokenExpired(String token) {
@@ -77,15 +71,6 @@ public class JwtService {
         .parseSignedClaims(token)
         .getPayload();
         
-        
-      
-
-      
-        // .parserBuilder()
-        // .setSigningKey(getSigningKey())
-        // .build()
-        // .parseClaimsJws(token)
-        // .getBody();
   }
 
   private SecretKey getSigningKey() {
